@@ -8,6 +8,45 @@ when the evidence also **supports** the moved answer.
 
 > ⚠️ Research prototype. Not medical advice. Do not use for clinical decisions.
 
+## When is this useful?
+
+MUG asks one question about retrieved evidence: *did it change the model's answer?* Evidence that changes nothing is
+dropped. Evidence that changes the answer is kept only if, optionally, a verifier model finds a quote in it that
+supports the new answer. That makes the app useful in these cases:
+
+- **Auditing an existing RAG system.** Point your RAG system's generation call at the audit proxy in *shadow* mode.
+  Your users still get plain-RAG answers, and every request is labelled: the documents had no effect, they changed
+  the answer with a supporting quote, or they changed it with no quote found. The Audit page then shows where your
+  retriever is steering answers without support. This is the main intended use.
+- **Comparing retrieval policies offline.** The batch auditor runs naive RAG, closed-book and the gates on the same
+  frozen documents (`python -m mug.audit cases.jsonl`). With reference answers, you get accuracy, token cost and
+  latency per policy before changing anything in production.
+- **Noisy or partly irrelevant retrieval.** When most retrieved passages are off-topic, the gate keeps few of them.
+  Under the original study's protocol (`gpt-4o-mini`, 17-passage pools) it matched naive RAG's accuracy while
+  putting only 5-9% of naive RAG's evidence tokens in the final prompt.
+- **Inspecting a single answer.** For one question, the trace shows what was retrieved, whether it moved the
+  answer, which passages were kept or withheld, the verifier's quote, and what each step cost in tokens and time.
+  This is useful for debugging, teaching, and explaining why a RAG answer changed.
+- **Cost-sensitive answering with a strong model.** In cascade mode a cheap scout decides whether evidence matters
+  before the expensive model reads it.
+- **Studying gating itself.** Gates, thresholds, schedules (serial or parallel probes) and models are all
+  configurable, and the evaluation harness reproduces the demo paper's numbers.
+
+Where it does **not** help, or needs care:
+
+- **It is not a correctness check.** "No effect" means the evidence did not change the answer, not that the answer
+  is right. "Supported" is an LLM judgement that a verbatim quote backs the answer, not a check against clinical
+  truth.
+- **When the evidence argues against the right answer.** A gate that only measures whether the answer moved cannot
+  tell good evidence from misleading evidence. The verifier helps when the right source is missing, but
+  plausible-looking evidence that argues against the right answer can also fool it.
+- **When the evidence is general background.** When the evidence needs reasoning rather than stating the finding
+  (textbook background, for example), there is often no single quote to find, so the verifier tends to withhold it.
+- **Some model and retriever combinations.** With `claude-haiku-4.5` the gate scored below closed-book on MedQA.
+  Check your own setup with the batch auditor before relying on it.
+- **Latency.** The gate adds model calls. Parallel probes help, but it is still slower than naive RAG.
+- **Clinical use.** Not for clinical decisions.
+
 ## Layout
 
 | Path | What |
