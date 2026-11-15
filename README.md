@@ -5,6 +5,8 @@ when it changes the model's answer, and optionally only when a verifier finds a 
 answer. This repo serves MUG as a medical Q&A app with a full trace of every decision, and as an audit proxy for
 existing RAG systems.
 
+**[Website and live replay demo →](https://pkm100.github.io/mug/)**
+
 > ⚠️ Research prototype. Not medical advice. Do not use for clinical decisions.
 
 ![MUG-Serve UI](paper_demo/figs/ui.png)
