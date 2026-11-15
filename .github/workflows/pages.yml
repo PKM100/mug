@@ -12,6 +12,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
+    if: github.repository == 'PKM100/mug'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
