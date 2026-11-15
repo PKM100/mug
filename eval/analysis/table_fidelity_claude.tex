@@ -1,0 +1,15 @@
+\begin{tabular}{lccccccc}
+\toprule
+Policy & Acc. & 95\% CI & $b/c$ & $p$ & Retained ctx (tok, \% naive) & Calls/q & p50 (s) \\
+\midrule
+\multicolumn{8}{l}{\textit{MedQA}} \\
+Closed-book & 0.760 & [0.70,0.81] & -- & -- & 0 (0\%) & 1.00 & 0.55 \\
+Naive (full pool) & 0.700 & [0.63,0.76] & 11/23 & 0.06 & 1070 (100\%) & 1.00 & 0.55 \\
+MUG flip+filter & 0.710 & [0.64,0.77] & 5/15 & 0.04 & 105 (10\%) & 2.44 & 0.62 \\
+\midrule
+\multicolumn{8}{l}{\textit{PubMedQA}} \\
+Closed-book & 0.545 & [0.48,0.61] & 16/45 & 3e-04 & 0 (0\%) & 1.00 & 0.55 \\
+Naive (full pool) & 0.690 & [0.62,0.75] & -- & -- & 1107 (100\%) & 1.00 & 0.56 \\
+MUG flip+filter & 0.720 & [0.65,0.78] & 11/5 & 0.21 & 144 (13\%) & 2.83 & 0.91 \\
+\bottomrule
+\end{tabular}

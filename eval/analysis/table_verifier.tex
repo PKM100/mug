@@ -1,0 +1,19 @@
+\begin{tabular}{lccccccccc}
+\toprule
+ & \multicolumn{4}{c}{E7 (gold in pool)} & \multicolumn{4}{c}{E8 (PubMedQA, same questions)} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Policy & MedQA & PubMedQA & Mixed & \$/1k q & Gold & No gold & Mixed & Admit (g/ng) \\
+\midrule
+gpt-4.1 naive & 0.853 & 0.753 & 0.803 & \$6.63 & 0.753 & 0.480 & 0.617 & -- \\
+\quad + Sonnet verifier (no gate) & 0.880 & 0.787 & 0.833 & \$27.99 & 0.787 & 0.593 & 0.690 & 69\% / 7\% \\
+\quad + Sonnet verifier (disagreements only) & 0.880 & 0.787 & 0.833 & \$11.05 & 0.787 & 0.593 & 0.690 & 88\% / 69\% \\
+4o-mini flip & 0.727 & 0.793 & 0.760 & \$0.63 & 0.793 & 0.500 & 0.647 & 29\% / 29\% \\
+\quad + Sonnet verifier & 0.700 & 0.767 & 0.733 & \$2.10 & 0.767 & 0.587 & 0.677 & 21\% / 0\% \\
+\quad + Haiku verifier & 0.687 & 0.713 & 0.700 & \$1.11 & 0.713 & 0.580 & 0.647 & 15\% / 1\% \\
+\quad + gpt-4.1 verifier & 0.713 & 0.760 & 0.737 & \$0.98 & 0.760 & 0.580 & 0.670 & 23\% / 2\% \\
+Cascade flip & 0.893 & 0.740 & 0.817 & \$1.14 & 0.740 & 0.553 & 0.647 & 27\% / 29\% \\
+\quad + Sonnet verifier & 0.887 & 0.733 & 0.810 & \$2.56 & 0.733 & 0.593 & 0.663 & 21\% / 0\% \\
+\midrule
+\textit{Condition-aware reference (gpt-4.1)} & -- & -- & -- & -- & 0.753 & 0.593 & 0.673 & 100\% / 0\% \\
+\bottomrule
+\end{tabular}

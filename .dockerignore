@@ -1,0 +1,12 @@
+**/.venv
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+frontend/dist
+data
+eval
+audit
+paper*
+research_mug
+.git
+**/*.pdf

@@ -1,0 +1,13 @@
+\begin{tabular}{lcccccr}
+\toprule
+Policy & Gold & No gold & Mixed & $\Delta$ vs.\ 4.1 naive [95\% CI], $p$ & Admit (g/ng) & \$/1k q \\
+\midrule
+gpt-4.1 closed-book & 0.593 & 0.593 & 0.593 & -0.023 [-0.09,+0.05], 0.58 & -- & \$0.14 \\
+gpt-4.1 naive & 0.753 & 0.480 & 0.617 & -- & -- & \$6.20 \\
+Cascade flip (4o-mini scout) & 0.740 & 0.553 & 0.647 & +0.030 [-0.02,+0.08], 0.33 & 27\% / 29\% & \$1.09 \\
+gpt-4o-mini naive & 0.753 & 0.473 & 0.613 & -0.003 [-0.06,+0.05], 1.00 & -- & \$0.46 \\
+gpt-4o-mini flip & 0.793 & 0.500 & 0.647 & +0.030 [-0.02,+0.08], 0.33 & 29\% / 29\% & \$0.62 \\
+\midrule
+\textit{Condition-aware reference (gpt-4.1)} & 0.753 & 0.593 & 0.673 & +0.057 [+0.01,+0.10], 0.01 & 100\% / 0\% & -- \\
+\bottomrule
+\end{tabular}

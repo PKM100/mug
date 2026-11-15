@@ -1,0 +1,2 @@
+{"id": "moves", "question": "Flank pain and fever: most likely diagnosis?", "options": {"A": "Renal stone", "B": "Pyelonephritis", "C": "Appendicitis", "D": "Cystitis"}, "documents": ["Distractor about stones.", {"content": "Flank pain with fever indicates pyelonephritis. More text.", "title": "Textbook"}], "reference": "B"}
+{"id": "no-docs", "question": "Flank pain and fever: most likely diagnosis?", "options": {"A": "Renal stone", "B": "Pyelonephritis", "C": "Appendicitis", "D": "Cystitis"}, "documents": [], "reference": "B"}

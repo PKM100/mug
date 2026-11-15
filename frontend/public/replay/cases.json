@@ -1,0 +1,918 @@
+{
+ "note": "Recorded cases, replayed without any model or network call.",
+ "cases": [
+  {
+   "key": "no-movement",
+   "title": "Evidence does not move the answer",
+   "blurb": "The closed-book and full-pool probes agree, so the flip gate withholds all 17 passages and answers closed-book after two parallel calls.",
+   "request": {
+    "question": "A 40-year-old male presents to your office complaining that he is too weak to climb stairs or brush his hair. He denies any headaches or change in vision. A muscle biopsy reveals CD8+ lymphocyte infiltration in the endomysium. Which of the following is the most likely diagnosis?",
+    "options": {
+     "A": "Systemic lupus erythematosus",
+     "B": "Polymyalgia rheumatica",
+     "C": "Polymyositis",
+     "D": "Dermatomyositis"
+    },
+    "gate": "flip",
+    "answer_model": "gpt-4o-mini",
+    "probe_model": "gpt-4o-mini",
+    "k_textbook": 0,
+    "k_pubmed": 0,
+    "rewrite_query": false,
+    "user_passages": [],
+    "speculative_filter": false,
+    "overlap_retrieval": true,
+    "scout_model": null,
+    "verifier_model": null,
+    "tau_m": 0.15,
+    "tau_g": 0.5,
+    "tau_sem": 0.5
+   },
+   "result": {
+    "type": "result",
+    "question": "A 40-year-old male presents to your office complaining that he is too weak to climb stairs or brush his hair. He denies any headaches or change in vision. A muscle biopsy reveals CD8+ lymphocyte infiltration in the endomysium. Which of the following is the most likely diagnosis?",
+    "options": {
+     "A": "Systemic lupus erythematosus",
+     "B": "Polymyalgia rheumatica",
+     "C": "Polymyositis",
+     "D": "Dermatomyositis"
+    },
+    "question_type": "mcq",
+    "result": {
+     "gate": "flip",
+     "mode": "closed_book",
+     "answer": "C",
+     "answer_text": "C. Polymyositis",
+     "admitted": false,
+     "kept_context": [],
+     "closed_book_answer": "C",
+     "context_answer": "C",
+     "movement": 0.0,
+     "groundedness": null,
+     "retained_tokens": 0,
+     "pool_tokens": 3206,
+     "note": "Evidence did not move the answer; context withheld.",
+     "verification": null
+    },
+    "pool": [
+     {
+      "id": "Neurology_Adams_11302",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "The many reports that followed have substantiated and amplified Shulman\u2019s original description. The disease predominates in men in a ratio of 2:1. Symptoms appear between the ages of 30 and 60 years and are often precipitated by heavy exercise (Michet et al). There may be low-grade fever and myalgia followed by the subacute development of diffuse cutaneous thickening and limitation of movement of small and large joints. In some patients, proximal muscle weakness and eosinophilic infiltration of muscle can be demonstrated (Michet et al). Repeated examinations of the blood disclose an eosinophilia in most but not all patients. The disease usually remits spontaneously or responds well to corticosteroids. A small number relapse and do not respond to treatment and some have developed aplastic anemia and lymphoor myeloproliferative disease.",
+      "url": null,
+      "pool_index": 0
+     },
+     {
+      "id": "InternalMed_Harrison_25792",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "antibody, or rheumatoid factor, along with modest elevation of the serum CK and aldolase. They demonstrate a \u201cbreak-away\u201d pattern of weaknesswithdifficultysustainingeffortbutnottruemuscleweakness. Themusclebiopsyisusuallynormalornonspecific.Manysuchpatients show some response to nonsteroidal anti-inflammatory agents or glucocorticoids, although most continue to have indolent complaints. An indolent fasciitis in the setting of an ill-defined connective tissue disorder may be at times present, and these patients should not be labeled as having a psychosomatic disorder. Chronic fatigue syndrome, which may follow a viral infection, can present with debilitating fatigue, sore throat, painful lymphadenopathy, myalgia, arthralgia, sleep disorder, and headache (Chap. 464e). These patients do not have muscle weakness, and the muscle biopsy is normal.",
+      "url": null,
+      "pool_index": 1
+     },
+     {
+      "id": "InternalMed_Harrison_31359",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "FIgURE 462e-2 Diagnostic evaluation of persistent weakness. Examination reveals one of seven patterns of weakness. The pattern of weakness in combination with the laboratory evaluation leads to a diagnosis. ALS, amyotrophic lateral sclerosis; CK, creatine kinase; DM, dermatomyositis; EMG, electromyography; EOMs, extraocular muscles; FSHD, facioscapulohumeral dystrophy; IBM, inclusion body myositis; MG, myasthenia gravis; OPMD, oculopharyngeal muscular dystrophy; PM, polymyositis. muscle. Pathologic fatigability is accompanied by abnormal clinical or laboratory findings. Fatigue without those supportive features almost never indicates a primary muscle disease.",
+      "url": null,
+      "pool_index": 2
+     },
+     {
+      "id": "Neurology_Adams_11296",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "3. When muscle pain is a prominent feature, polymyalgia rheumatica must be differentiated. This latter syndrome is characterized by pain, stiffness, and tenderness in the muscles of the neck, shoulders, and arms, and sometimes of the hips and thighs; even passive motion of the limbs causes pain because of the periarticular locus of this disease. A high sedimentation rate, usually above 65 mm/h, is a diagnostic feature, but more typically the value is close to 100 mm/h, levels higher than in myositis. Biopsy of the temporal artery frequently discloses a giant cell arteritis. CK levels\u2014and, of course, muscle biopsy\u2014are normal. Rapid disappearance of pain with administration of small doses of prednisone is also diagnostic of polymyalgia rheumatica (see Chap. 9).",
+      "url": null,
+      "pool_index": 3
+     },
+     {
+      "id": "Neurology_Adams_11776",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Diagnosis A syndrome of symmetrical weakness and fatigability of proximal muscles coupled with dry mouth, sphincter disturbances, aching muscles, and diminished reflexes are diagnostic. The illnesses with which it might be confused are myasthenia gravis, inclusion body myopathy, and polymyositis. There is a superficial resemblance to hysterical paralysis, where the patient may do better with encouragement on making a succession of voluntary contractions, and arthritis, where pain hampers the first movements more than the successive ones. Then the electrodiagnostic and specific serologic tests are of value.",
+      "url": null,
+      "pool_index": 4
+     },
+     {
+      "id": "InternalMed_Harrison_25784",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Necrotizing autoimmune Myositis This is an increasingly recognized upon histochemical and biochemical studies of the muscle biopsy. entitythathasdistinctfeatures,eventhoughitisoftenlabeledasPM.It The endocrine myopathies such as those due to hypercorticosteroidpresents as an acute or subacute onset of symmetric muscle weakness; ism, hyper-and hypothyroidism, and hyper-and hypoparathyroidism CK is typically extremely high. The weakness can be severe. Coexisting require the appropriate laboratory investigations for diagnosis. Muscle interstitial lung disease and cardiomyopathy may be present. The dis-wasting in patients with an underlying neoplasm may be due to disuse, order may develop after a viral infection, in association with cancer, cachexia, or rarely a paraneoplastic neuromyopathy (Chap. 122).",
+      "url": null,
+      "pool_index": 5
+     },
+     {
+      "id": "InternalMed_Harrison_25795",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Polymyositis, Dermatomyositis, and Inclusion Body Myositis aMyopathic muscle weakness, affecting proximal muscles more than distal ones and sparing eye and facial muscles, is characterized by a subacute onset (weeks to months) and rapid progression in patients who have no family history of neuromuscular disease, no endocrinopathy, no exposure to myotoxic drugs or toxins, and no biochemical muscle disease (excluded on the basis of muscle biopsy findings). bIn some cases with the typical rash, the muscle strength is seemingly normal (dermatomyositis sine myositis); these patients often have new onset of easy fatigue and reduced endurance. Careful muscle testing may reveal mild muscle weakness. cSee text for details. dAn adequate trial of prednisone or other immunosuppressive drugs is warranted in probable cases. If, in retrospect, the disease is unresponsive to therapy, another muscle biopsy should be considered to exclude other diseases or possible evolution in inclusion body myositis.",
+      "url": null,
+      "pool_index": 6
+     },
+     {
+      "id": "Neurology_Adams_11214",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Diagnosis Clinically, one should suspect the disease in a patient who presents with a puffy face and tender muscles. Eosinophilia is practically always present in the peripheral blood (>700 cells/mm3), although the sedimentation rate is often normal. The CK level is moderately elevated. A skin test using Trichinella antigen is available, but it is unreliable. The enzyme-linked immunosorbent assay (ELISA) blood test is more accurate, but it becomes positive only after 1 or 2 weeks of illness. Biopsy of almost any muscle (usually the deltoid or gastrocnemius), regardless of whether it is painful or tender, is probably the most reliable confirmatory test. More than 500 mg of muscle may be required to demonstrate larvae, but smaller specimens will almost invariably show an inflammatory myopathy. Muscle fibers undergo segmental necrosis, and the interstitial inflammatory infiltrates contain a predominance of eosinophils. This accounts for the edema, pain, and tenderness of heavily infested",
+      "url": null,
+      "pool_index": 7
+     },
+     {
+      "id": "InternalMed_Harrison_25797",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "FIGUrE 388-3 Cross-section of a muscle biopsy from a patient with polymyositis demonstrates scattered inflammatory foci with lymphocytes invading or surrounding muscle fibers. Note lack of chronic myopathic features (increased connective tissue, atrophic or hypertrophic fibers) as seen in inclusion body myositis. to identify the presence of active or chronic myopathy and to exclude neurogenic disorders. Magnetic resonance imaging (MRI) is not routinely used for the diagnosis of PM, DM, or IBM. However, it may provide information or guide the location of the muscle biopsy in certain clinical settings.",
+      "url": null,
+      "pool_index": 8
+     },
+     {
+      "id": "Neurology_Adams_11235",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "When the patient is first seen, many of the muscles of the trunk, shoulders, hips, upper arms, and thighs are usually involved. The posterior and anterior neck muscles (the head may loll) and the pharyngeal, striated esophageal, and laryngeal muscles (dysphagia and dysphonia) may be involved as well. In restricted forms of the disease, only the neck or paraspinal muscles (camptocormia) may be implicated. Ocular muscles are not affected but there are rare instances of combined myositis and myasthenia gravis. The facial, tongue, and jaw muscles are only occasionally affected, and the distal muscles, namely the forearm, hand, leg, and foot are spared in 75 percent of cases. The respiratory muscles are weakened to a minor degree and in only an exceptional case is there dyspnea, the cause of which is revealed only by an intercostal muscle biopsy (Thomas and Lancaster). Occasionally, the early symptoms predominate in one proximal limb before becoming generalized. As emphasized further on,",
+      "url": null,
+      "pool_index": 9
+     },
+     {
+      "id": "Neurology_Adams_11234",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "The usual mode of onset is with mainly painless weakness of the proximal limb muscles, especially of the hips and thighs and to a lesser extent the shoulder girdle and neck muscles. Often, the patient cannot easily determine the time of onset of weakness. Certain actions\u2014such as arising from a deep or low chair or from a squatting or kneeling position, climbing or descending stairs, walking, putting an object on a high shelf, or combing the hair\u2014become increasingly difficult. Pain of an aching variety in the buttocks, calves, or shoulders is experienced by approximately 15 percent of patients, and it may indicate a combination of myositis and rheumatoid arthritis, tendonitis, or other rhuematologic disorder.",
+      "url": null,
+      "pool_index": 10
+     },
+     {
+      "id": "Neurology_Adams_11297",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Chap. 9). 4. The patient has restricted muscle weakness. Weakness or paralysis of the posterior neck muscles, with inability to hold up the head, restricted bilateral quadriceps weakness, and other limited pelvocrural palsies are examples. Most often, the head-hanging or head-lolling syndrome proves to be caused by PM, and the other syndromes are caused by restricted forms of dystrophy or by motor neuron disease. IBM is the main alternative consideration in cases of neck or quadriceps weakness, particularly if the latter weakness is asymmetric; muscle enzymes in the serum are normal or slightly elevated. EMG and biopsy are helpful in diagnosis.",
+      "url": null,
+      "pool_index": 11
+     },
+     {
+      "id": "Pediatrics_Nelson_1984",
+      "source": "textbook",
+      "title": "Pediatrics Nelson",
+      "content": "Diagnosis of JDM is based on the presence of documented muscle inflammation in the setting of classic rash (Table 91-1).A small percentage of children have muscle disease without skin manifestations, but polymyositis is sufficiently rare in children that they should have a muscle biopsy to exclude other causes of muscle weakness, such as muscular dystrophy (particularly boys). The differential diagnosis also includes postinfectious myositis and other myopathies (see Chapter 182).",
+      "url": null,
+      "pool_index": 12
+     },
+     {
+      "id": "Neurology_Adams_11294",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "In addition to these main issues of distinguishing PM and DM from IBM, currently aided by antibody testing, we call attention to the following problems that we have encountered in connection with diagnosis: 1. The patient with proximal muscle weakness is incorrectly diagnosed as having progressive muscular dystrophy (actually, the opposite pertains more often). Points in favor of myositis are (1) lack of family history (although many dystrophies have recessive inheritance); (2) older age at onset; (3) rapid evolution of weakness; (4) evidence, past or present, of other connective tissue diseases; (5) high serum CK values (again, can be high in certain dystrophies); (6) marked degeneration and regeneration in muscle biopsy; and, finally, if there is still doubt, (7) unmistakable improvement with corticosteroid therapy.",
+      "url": null,
+      "pool_index": 13
+     },
+     {
+      "id": "Pediatrics_Nelson_1982",
+      "source": "textbook",
+      "title": "Pediatrics Nelson",
+      "content": "A classic JDM rash occurs on the face and across the cheeks but also can be found on the shoulders and back (shawl sign). Patients may have heliotrope discoloration of the eyelids. Scaly, red plaques (Gottron papules) classically are found across the knuckles but can be found on the extensor surfaces of any joint. Patients may have periungual erythema and dilated nail-fold capillaries. Less commonly, patients develop cutaneous vasculitis, with inflammation, erythema, and skin breakdown. Rash typical of dermatomyositis Symmetric proximal muscle weakness Elevated muscle enzymes (ALT, AST, LDH, CPK, and aldolase) EMG abnormalities typical of dermatomyositis (fasciculations, needle insertion irritability, and high-frequency discharges) Positive muscle biopsy specimen with chronic inflammation",
+      "url": null,
+      "pool_index": 14
+     },
+     {
+      "id": "InternalMed_Harrison_16858",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "by funiculitis, epididymitis, and scrotal pain and tenderness. In endemic areas, another type of acute disease\u2014dermatolymphangioadenitis (DLA)\u2014is recognized as a syndrome that includes high fever, chills, myalgias, and headache. Edematous inflammatory plaques clearly demarcated from normal skin are seen. Vesicles, ulcers, and hyperpigmentation may also be noted. There is often a history of trauma, burns, irradiation, insect bites, punctiform lesions, or chemical injury. Entry lesions, especially in the interdigital area, are common. DLA is often diagnosed as cellulitis.",
+      "url": null,
+      "pool_index": 15
+     },
+     {
+      "id": "Neurology_Adams_11295",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "2. The patient with a systemic autoimmune disease (rheumatoid arthritis, scleroderma, lupus erythematosus, Sj\u00f6gren syndrome) is suspected of having PM in addition. Pain in these conditions prevents strong exertion (algesic pseudoparesis). Points against the coexistence of myositis are (1) the inability to document weakness out of proportion to muscle atrophy and the presence of pain on passive movement of the limbs; (2) normal EMG; (3) normal serum CK; and (4) normal muscle biopsy except possibly for areas of infiltration of chronic inflammatory cells in the endomysial and perimysial connective tissue (interstitial myositis).",
+      "url": null,
+      "pool_index": 16
+     }
+    ],
+    "summary": {
+     "wall_ms": 653.6,
+     "llm_calls": 2,
+     "llm_calls_used": 2,
+     "prompt_tokens": 3063,
+     "completion_tokens": 2,
+     "wasted_prompt_tokens": 0,
+     "sequential_ms": 1284.3
+    },
+    "spans": [
+     {
+      "name": "probe(closed-book)",
+      "kind": "llm",
+      "start_ms": 0.1,
+      "end_ms": 653.5,
+      "duration_ms": 653.3,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 129,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "probe(full pool)",
+      "kind": "llm",
+      "start_ms": 1.3,
+      "end_ms": 632.3,
+      "duration_ms": 631.0,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 2934,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "decide(movement)",
+      "kind": "decision",
+      "start_ms": 653.6,
+      "end_ms": 653.6,
+      "duration_ms": 0.0,
+      "model": null,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "moved": false,
+       "movement": 0.0
+      }
+     }
+    ]
+   },
+   "provenance": {
+    "run": "eval/results/scale_medqa_gpt4omini_d16_s1.jsonl",
+    "qid": "medqa:0359",
+    "gold": "C",
+    "recorded": "2026-11-13 (gpt-4o-mini via GitHub Copilot API)",
+    "verifier": null,
+    "differences": [
+     "Pool: 17-passage paper-protocol pool (top textbook chunks), not live retrieval.",
+     "Kept passages are shown in full; decisive-sentence compression was not recorded."
+    ]
+   }
+  },
+  {
+   "key": "withheld",
+   "title": "Tempting movement, verifier finds no support: evidence withheld",
+   "blurb": "The 17-passage pool flips a correct closed-book answer to a wrong one. The filter keeps two passages, but the evidence verifier finds no passage that establishes the moved answer, so MUG keeps the closed-book answer.",
+   "request": {
+    "question": "A 55-year-old woman is brought to the emergency department because of worsening upper abdominal pain for the past 8 hours. She reports that the pain radiates to her back and is associated with nausea. She has hypertension and hyperlipidemia, for which she takes enalapril, furosemide, and simvastatin. Her temperature is 37.5\u00b0C (99.5\u00b0F), blood pressure is 84/58 mm Hg, and pulse is 115/min. The lungs are clear to auscultation. Examination shows abdominal distention with epigastric tenderness and guarding. Bowel sounds are decreased. Extremities are warm. Laboratory studies show:\nHematocrit 48%\nLeukocyte count 13,800/mm3\nPlatelet count 175,000/mm3\nSerum  \nCalcium 8.0 mg/dL\nUrea nitrogen 32 mg/dL\nAmylase 250 U/L\nAn ECG shows sinus tachycardia. Which of the following is the most likely underlying cause of this patient's vital sign abnormalities?",
+    "options": {
+     "A": "Abnormal coagulation and fibrinolysis",
+     "B": "Capillary leakage",
+     "C": "Decreased cardiac output",
+     "D": "Pseudocyst formation"
+    },
+    "gate": "flip",
+    "answer_model": "gpt-4o-mini",
+    "probe_model": "gpt-4o-mini",
+    "k_textbook": 0,
+    "k_pubmed": 0,
+    "rewrite_query": false,
+    "user_passages": [],
+    "speculative_filter": false,
+    "overlap_retrieval": true,
+    "scout_model": null,
+    "verifier_model": "claude-sonnet-5.5",
+    "tau_m": 0.15,
+    "tau_g": 0.5,
+    "tau_sem": 0.5
+   },
+   "result": {
+    "type": "result",
+    "question": "A 55-year-old woman is brought to the emergency department because of worsening upper abdominal pain for the past 8 hours. She reports that the pain radiates to her back and is associated with nausea. She has hypertension and hyperlipidemia, for which she takes enalapril, furosemide, and simvastatin. Her temperature is 37.5\u00b0C (99.5\u00b0F), blood pressure is 84/58 mm Hg, and pulse is 115/min. The lungs are clear to auscultation. Examination shows abdominal distention with epigastric tenderness and guarding. Bowel sounds are decreased. Extremities are warm. Laboratory studies show:\nHematocrit 48%\nLeukocyte count 13,800/mm3\nPlatelet count 175,000/mm3\nSerum  \nCalcium 8.0 mg/dL\nUrea nitrogen 32 mg/dL\nAmylase 250 U/L\nAn ECG shows sinus tachycardia. Which of the following is the most likely underlying cause of this patient's vital sign abnormalities?",
+    "options": {
+     "A": "Abnormal coagulation and fibrinolysis",
+     "B": "Capillary leakage",
+     "C": "Decreased cardiac output",
+     "D": "Pseudocyst formation"
+    },
+    "question_type": "mcq",
+    "result": {
+     "gate": "flip",
+     "mode": "unverified_keep",
+     "answer": "B",
+     "answer_text": "B. Capillary leakage",
+     "admitted": false,
+     "kept_context": [],
+     "closed_book_answer": "B",
+     "context_answer": "C",
+     "movement": 1.0,
+     "groundedness": null,
+     "retained_tokens": 0,
+     "pool_tokens": 3861,
+     "note": "Evidence moved the answer, but an independent verifier found no passage that establishes it; kept the parametric answer. (The filter had kept passages #1, #12.)",
+     "verification": {
+      "supported": false,
+      "doc": null,
+      "quote": "",
+      "model": "claude-sonnet-5.5"
+     }
+    },
+    "pool": [
+     {
+      "id": "InternalMed_Harrison_1359",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "PART 2 Cardinal Manifestations and Presentation of Diseases Vital Signs Significant tachycardia and hypotension are indicative of important hemodynamic consequences of the underlying cause of chest discomfort and should prompt a rapid survey for the most severe conditions, such as acute MI with cardiogenic shock, massive pulmonary embolism, pericarditis with tamponade, or tension pneumothorax. Acute aortic emergencies usually present with severe hypertension but may be associated with profound hypotension when there is coronary arterial compromise or dissection into the pericardium. Sinus tachycardia is an important manifestation of submassive pulmonary embolism. Tachypnea and hypoxemia point toward a pulmonary cause. The presence of low-grade fever is nonspecific because it may occur with MI and with thromboembolism in addition to infection.",
+      "url": null,
+      "pool_index": 0
+     },
+     {
+      "id": "Surgery_Schwartz_622",
+      "source": "textbook",
+      "title": "Surgery Schwartz",
+      "content": "ionized calcium in neuromuscular function often is required.Hypercalcemia Hypercalcemia is defined as a serum calcium level above the normal range of 8.5 to 10.5 mEq/L or an increase in the ionized calcium level above 4.2 to 4.8 mg/dL. Primary hyperparathyroidism in the outpatient setting and malignancy in hospitalized patients, from either bony metastasis or secre-tion of parathyroid hormone\u2013related protein, account for most cases of symptomatic hypercalcemia.11 Symptoms of hypercal-cemia (see Table 3-6), which vary with the degree of sever-ity, include neurologic impairment, musculoskeletal weakness and pain, renal dysfunction, GI symptoms of nausea, vomiting, and abdominal pain. Cardiac symptoms can be manifested as hypertension, cardiac arrhythmias, and a worsening of digitalis toxicity. ECG changes in hypercalcemia include shortened QT interval, prolonged PR and QRS intervals, increased QRS volt-age, T-wave flattening and widening, and atrioventricular block (which can progress",
+      "url": null,
+      "pool_index": 1
+     },
+     {
+      "id": "First_Aid_Step2_1088",
+      "source": "textbook",
+      "title": "First Aid Step2",
+      "content": "Hypercoagulable states: Pregnancy/postpartum, OCP use, coagulation disorders (e.g., protein C/protein S defciency, factor V Leiden), malignancy, severe burns. Presents with sudden-onset dyspnea, pleuritic chest pain, low-grade fever, cough, and, rarely, hemoptysis. Pulmonary embolism: Hypoxia and hypocarbia with resulting respiratory alkalosis. Tachypnea, tachycardia, and fever. Exam may reveal a loud P2 and prominent jugular A waves with right heart failure. Venous thrombosis: Unilateral swelling; cords on the calf. ABGs: Respiratory alkalosis (2\u00b0 hyperventilation) with PO2 < 80 mmHg. CXR: Usually normal, but may show atelectasis, pleural effusion, Hampton\u2019s hump (a wedge-shaped infarct), or Westermark\u2019s sign (oligemia in the affected lung zone). ECG: Not diagnostic; most commonly reveals sinus tachycardia. The classic triad of S1Q3T3\u2014acute right heart strain with an S wave in lead I, a Q wave in lead III, and an inverted T wave in lead III\u2014is uncommon.",
+      "url": null,
+      "pool_index": 2
+     },
+     {
+      "id": "First_Aid_Step2_1221",
+      "source": "textbook",
+      "title": "First Aid Step2",
+      "content": "The 6 P\u2019s of ischemia due to peripheral vascular disease. Virchow\u2019s triad. The most common cause of hypertension in young women. The most common cause of hypertension in young men. Abdominal ultrasound and CT. > 5.5 cm, rapidly enlarging, symptomatic, or ruptured. Morphine, O2, sublingual nitroglycerin, ASA, IV \u03b2-blockers, heparin. Abdominal obesity, high triglycerides, low HDL, hypertension, insulin resistance, prothrombotic or proin\ufb02 ammatory states. Exercise stress treadmill with ECG. Pharmacologic stress test (e.g., dobutamine echo). < 70. Angina, ST-segment changes on ECG, or \u2193 BP. ST-segment elevation (depression means ischemia), \ufb02attened T waves, and Q waves. Anterior wall (LAD/diagonal), inferior (PDA), posterior (left circum\ufb02ex/oblique, RCA/marginal), septum (LAD/diagonal). Prinzmetal\u2019s angina. CHF, shock, and altered mental status. V/Q scan. Protamine. PT. Hypertrophic cardiomyopathy.",
+      "url": null,
+      "pool_index": 3
+     },
+     {
+      "id": "First_Aid_Step2_1181",
+      "source": "textbook",
+      "title": "First Aid Step2",
+      "content": "b Doses of electricity listed above assume a monophasic defbrillator. Maximum energy output on more modern biphasic def brilla tors is usually 150\u2013200 J. Asystole Epinephrine and atropine. Ventricular fbrillation or pulseless ventricular tachycardia Pulseless electrical activity (PEA) Supraventricular tachycardia (SVT) Atrial f brillation/f utter Bradycardia Possible causes of PEA\u2014 The 5 H\u2019s and 5 T\u2019s Hypovolemia Hypoxia Hydrogen ion: Acidosis Hyper/Hypo: K+, other metabolic Hypothermia Tablets: Drug OD, ingestion Tamponade: Cardiac Tension pneumothorax Thrombosis: Coronary Thrombosis: Pulmonary Acute-onset abdominal pain has many potential etiologies and may require immediate medical or surgical intervention. Sharp, focal pain generally implies a parietal (peritoneal) etiology; dull, diffuse pain is commonly of visceral (organ) origin. Figure 2.17-2 identifies the common causes of acute abdomen.",
+      "url": null,
+      "pool_index": 4
+     },
+     {
+      "id": "InternalMed_Harrison_20998",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "*Furosemide: <0.5 mg/kg for new-onset acute pulmonary edema without hypervolemia; 1 mg/kg for acute on chronic volume overload, renal insufficiency. \u2020For management of bradycardia and tachycardia, see Chaps. 274 and 276. Additional information can also be found in Section 9.5 of the 2013 American College of Cardiology Foundation/American Heart Association Guidelines for Management of ST-Elevation Myocardial Infarction and Figures 3 and 4 of the 2010 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Part 8: Adult Advanced Cardiovascular Life Support. *Indicates modification from published guidelines. ACE, angiotensinconverting enzyme; BP, blood pressure; MI, myocardial infarction. (Modified from Guidelines 2000 for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Part 7: The era of reperfusion: Section 1: Acute coronary syndromes [acute myocardial infarction]. The American Heart Association in collaboration with",
+      "url": null,
+      "pool_index": 5
+     },
+     {
+      "id": "Pharmacology_Katzung_6496",
+      "source": "textbook",
+      "title": "Pharmacology Katzung",
+      "content": "1. Vital signs\u2014Careful evaluation of vital signs (blood pressure, pulse, respirations, and temperature) is essential in all toxicologic emergencies. Hypertension and tachycardia are typical with amphetamines, cocaine, and antimuscarinic (anticholinergic) drugs. Hypotension and bradycardia are characteristic features of overdose with calcium channel blockers, \u03b2 blockers, clonidine, and sedative hypnotics. Hypotension with tachycardia is common with tricyclic antidepressants, trazodone, quetiapine, vasodilators, and \u03b2 agonists. Rapid respirations are typical of salicylates, carbon monoxide, and other toxins that produce metabolic acidosis or cellular asphyxia. Hyperthermia may be associated with sympathomimetics, anticholinergics, salicylates, and drugs producing seizures or muscular rigidity. Hypothermia can be caused by any CNS-depressant drug, especially when accompanied by exposure to a cold environment. 2.",
+      "url": null,
+      "pool_index": 6
+     },
+     {
+      "id": "First_Aid_Step2_1114",
+      "source": "textbook",
+      "title": "First Aid Step2",
+      "content": "Exam may show a pericardial rub, asterixis, hypertension, \u2193 urine output, and an \u2191 respiratory rate (compensation of metabolic acidosis or from pulmonary edema 2\u00b0 to volume overload) Category-specific symptoms are as follows: Prerenal: Thirst, orthostatic hypotension, tachycardia, \u2193 skin turgor, dry mucous membranes, reduced axillary sweating, stigmata of comorbid conditions. Intrinsic: Associated with a history of drug exposure (aminoglycosides, NSAIDs), infection, or exposure to contrast media or toxins (e.g., myoglobin, myeloma protein). Hematuria or tea-colored urine, foamy urine (from proteinuria), hypertension, and/or edema may also be present. Atheroemboli: Subcutaneous nodules, livedo reticularis, digital ischemia. Postrenal: Prostatic disease, \u2193 urine output leading to suprapubic pain, distended bladder and \ufb02 ank pain. Check serum electrolytes. Examine the urine for RBCs, WBCs, casts (see Table 2.16-4), and urine eosinophils.",
+      "url": null,
+      "pool_index": 7
+     },
+     {
+      "id": "InternalMed_Harrison_3700",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Mild hypercalcemia (up to 11\u201311.5 mg/dL) is usually asymptomatic and recognized only on routine calcium measurements. Some patients may complain of vague neuropsychiatric symptoms, including trouble concentrating, personality changes, or depression. Other presenting symptoms may include peptic ulcer disease or nephrolithiasis, and fracture risk may be increased. More severe hypercalcemia (>12\u201313 mg/dL), particularly if it develops acutely, may result in lethargy, stupor, or coma, as well as gastrointestinal symptoms (nausea, anorexia, constipation, or pancreatitis). Hypercalcemia decreases renal concentrating ability, which may cause polyuria and polydipsia. With longstanding hyperparathyroidism, patients may present with bone pain or pathologic fractures. Finally, hypercalcemia can result in significant electrocardiographic changes, including bradycardia, AV block, and short QT interval; changes in serum calcium can be monitored by following the QT interval.",
+      "url": null,
+      "pool_index": 8
+     },
+     {
+      "id": "Pharmacology_Katzung_1130",
+      "source": "textbook",
+      "title": "Pharmacology Katzung",
+      "content": "Irbesartan Generic,Avapro Treatment of Angina Pectoris Bertram G. Katzung, MD, PhD* A 56-year-old woman presents in the office with a history of recent-onset chest discomfort when jogging or swimming vigorously. The pain is dull but poorly localized; it disap-pears after 5\u201310 minutes of rest. She has never smoked but has a history of hyperlipidemia (total cholesterol level of 245 mg/dL and low-density lipoprotein [LDL] of 160 mg/dL recorded 1 year ago) and admits that she has not been fol-lowing the recommended diet. Her father survived a \u201cheart attack\u201d at age 55, and an uncle died of some cardiac disease at age 60. On physical examination, the patient\u2019s blood pressure is 145/90 mm Hg, and her heart rate is 80 bpm. She is in no acute distress, and there are no other significant physical findings; an electrocardiogram is normal except for slight left ventricular hypertrophy. Assuming that a diagno-sis of stable effort angina is correct, what medical treatment should be implemented?",
+      "url": null,
+      "pool_index": 9
+     },
+     {
+      "id": "Anatomy_Gray_543",
+      "source": "textbook",
+      "title": "Anatomy Gray",
+      "content": "In the clinic Are heart attack symptoms the same in men and women? Although men and women can experience the typical symptoms of severe chest pain, cold sweats, and pain in the left arm, women are more likely than men to have subtler, less recognizable symptoms. These may include abdominal pain, achiness in the jaw or back, nausea, shortness of breath, or simply fatigue. The mechanism of this difference is not understood, but it is important to consider cardiac ischemia for a wide range of symptoms. In the clinic The cardiac conduction system can be affected by coronary artery disease. The normal rhythm may be disturbed if the blood supply to the coronary conduction system is disrupted. If a dysrhythmia affects the heart rate or the order in which the chambers contract, heart failure and death may ensue. In the clinic Ectopic parathyroid glands in the thymus",
+      "url": null,
+      "pool_index": 10
+     },
+     {
+      "id": "Obstentrics_Williams_6487",
+      "source": "textbook",
+      "title": "Obstentrics Williams",
+      "content": "Cardiovascular: tachycardia, hypotension 3. Pulmonary: tachypnea, arteriovenous shunting with dysoxia and hypoxemia, exudative iniltrates from endothelialalveolar damage, pulmonary hypertension 4. Gastrointestinal: gastroenteritis-nausea, vomiting, and diarrhea; ileus; hepatocellular necrosis-jaundice, transaminitis 5. Renal: prerenal oliguria, azotemia, acute kidney injury, proteinuria 6. Hematological: leukocytosis or leukopenia, thrombocytopenia, activation of coagulation with disseminated intravascular coagulopathy 7. Endocrine: hyperglycemia, adrenal insuiciency 8. Cutaneous: acrocyanosis, erythroderma, bullae, digital gangrene.",
+      "url": null,
+      "pool_index": 11
+     },
+     {
+      "id": "InternalMed_Harrison_28478",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Hypercalcemia from any cause can result in fatigue, depression, mental confusion, anorexia, nausea, vomiting, constipation, reversible renal tubular defects, increased urine output, a short QT interval in the electrocardiogram, and, in some patients, cardiac arrhythmias. There is a variable relation from one patient to the next between the severity of hypercalcemia and the symptoms. Generally, symptoms are more common at calcium levels >2.9\u20133.0 mmol/L (11.6\u201312.0 mg/dL), but some patients, even at this level, are asymptomatic. When the calcium level is >3.2 mmol/L (12.8 mg/dL), calcification in kidneys, skin, vessels, lungs, heart, and stomach occurs and renal insufficiency may develop, particularly if blood phosphate levels are normal or elevated due to impaired renal excretion. Severe hypercalcemia, usually defined as \u22653.7\u20134.5 mmol/L (14.8\u201318.0 mg/dL), can be a medical emergency; coma and cardiac arrest can occur.",
+      "url": null,
+      "pool_index": 12
+     },
+     {
+      "id": "Surgery_Schwartz_6226",
+      "source": "textbook",
+      "title": "Surgery Schwartz",
+      "content": "ensues. The classical symptoms include postprandial abdominal pain, food fear, and weight loss. Persistent nausea and occasionally diarrhea may coexist. Diagnosis remains challenging, and most of the patients will undergo an extensive and expensive gastro-intestinal tract workup for the above symptoms prior to referral to a vascular service.The typical patient who develops nonocclusive mesenteric ischemia is an elderly patient who has multiple comorbidities, such as congestive heart failure, acute myocardial infarction with cardiogenic shock, hypovolemic or hemorrhagic shock, sepsis, pancreatitis, and administration of digitalis or vasocon-strictor agents such as epinephrine. Abdominal pain is only present in approximately 70% of these patients. When present, the pain is usually severe but may vary in location, character, and intensity. In the absence of abdominal pain, progressive abdominal distention with acidosis may be an early sign of isch-emia and impending bowel",
+      "url": null,
+      "pool_index": 13
+     },
+     {
+      "id": "Biochemistry_Lippincott_1914",
+      "source": "textbook",
+      "title": "Biochemistry Lippinco",
+      "content": "Patient Presentation: BE is a 45-year-old woman who presents with concerns about sudden (paroxysmal), intense, brief episodes of headache, sweating (diaphoresis), and a racing heart (palpitations). Focused History: BE reports that the attacks started ~3 weeks ago. They last from 2 to 10 minutes, during which time she feels quite anxious. During the attacks, it feels as though her heart is skipping beats (arrhythmia). At first, she thought the attacks were related to recent stress at work and maybe even menopause. The last time it happened, she was in a pharmacy and had her blood pressure taken. She was told it was 165/110 mm Hg. BE notes that she has lost weight (~8 lbs) in this period even though her appetite has been good.",
+      "url": null,
+      "pool_index": 14
+     },
+     {
+      "id": "First_Aid_Step1_317",
+      "source": "textbook",
+      "title": "First Aid Step1",
+      "content": "Angina Chest pain due to ischemic myocardium 2\u00b0 to coronary artery narrowing or spasm; no myocyte necrosis. Stable\u2014usually 2\u00b0 to atherosclerosis (\u2265 70% occlusion); exertional chest pain in classic distribution (usually with ST depression on ECG), resolving with rest or nitroglycerin. Vasospastic (also called Prinzmetal or Variant)\u2014occurs at rest 2\u00b0 to coronary artery spasm; transient ST elevation on ECG. Smoking is a risk factor; hypertension and hypercholesterolemia are not. Triggers include cocaine, alcohol, and triptans. Treat with Ca2+ channel blockers, nitrates, and smoking cessation (if applicable). Unstable\u2014thrombosis with incomplete coronary artery occlusion; +/\u2212 ST depression and/or T-wave inversion on ECG but no cardiac biomarker elevation (unlike NSTEMI); \u008f in frequency or intensity of chest pain or any chest pain at rest.",
+      "url": null,
+      "pool_index": 15
+     },
+     {
+      "id": "Neurology_Adams_6778",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Constitutional symptoms such as malaise, fever, anorexia, weight loss, and night sweats usually introduce the illness. The erythrocyte sedimentation rate is elevated in the early and active stages. Later there is evidence of occlusion of the brachiocephalic, subclavian, carotid, vertebral, and other arteries that may be asymptomatic or cause neurologic ischemic symptoms. The affected arteries no longer pulsate, hence the descriptive term pulseless disease. When renal arteries are involved, hypertension results, and there may be coronary occlusion, which may be fatal. Involvement of the pulmonary artery may lead to pulmonary hypertension. Coolness of the hands and weak radial pulses are common indicators of the disease and headaches are frequent. Blurring of vision, especially upon physical activity or fever, dizziness, and hemiparetic and hemisensory syndromes are the usual neurologic manifestations (Lupi-Herrera et al). The frequency of posturally induced neurologic symptoms has been",
+      "url": null,
+      "pool_index": 16
+     }
+    ],
+    "summary": {
+     "wall_ms": 3002.3,
+     "llm_calls": 4,
+     "llm_calls_used": 4,
+     "prompt_tokens": 8133,
+     "completion_tokens": 100,
+     "wasted_prompt_tokens": 0,
+     "sequential_ms": 3428.0
+    },
+    "spans": [
+     {
+      "name": "probe(closed-book)",
+      "kind": "llm",
+      "start_ms": 0.1,
+      "end_ms": 427.3,
+      "duration_ms": 427.2,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 289,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "probe(full pool)",
+      "kind": "llm",
+      "start_ms": 0.9,
+      "end_ms": 963.7,
+      "duration_ms": 962.8,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 3969,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "decide(movement)",
+      "kind": "decision",
+      "start_ms": 963.9,
+      "end_ms": 963.9,
+      "duration_ms": 0.0,
+      "model": null,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "moved": true,
+       "movement": 1.0
+      }
+     },
+     {
+      "name": "filter(marginal-utility)",
+      "kind": "llm",
+      "start_ms": 964.0,
+      "end_ms": 2312.4,
+      "duration_ms": 1348.3,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 3232,
+      "completion_tokens": 97,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "kept": [
+        1,
+        12
+       ]
+      }
+     },
+     {
+      "name": "answer(filtered context)",
+      "kind": "llm",
+      "start_ms": 2312.4,
+      "end_ms": 3002.1,
+      "duration_ms": 689.7,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 643,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "verify(support)",
+      "kind": "llm",
+      "start_ms": 3002.1,
+      "end_ms": 3002.1,
+      "duration_ms": 0,
+      "model": "claude-sonnet-5.5",
+      "prompt_tokens": 1158,
+      "completion_tokens": 384,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "timing": "not recorded: verdict comes from a separate offline verifier pass over this trace"
+      }
+     },
+     {
+      "name": "decide(verified support)",
+      "kind": "decision",
+      "start_ms": 3002.1,
+      "end_ms": 3002.1,
+      "duration_ms": 0,
+      "model": null,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "supported": false,
+       "quote": ""
+      }
+     }
+    ]
+   },
+   "provenance": {
+    "run": "eval/results/scale_medqa_gpt4omini_d16_s1.jsonl",
+    "qid": "medqa:1040",
+    "gold": "B",
+    "recorded": "2026-11-13 (gpt-4o-mini via GitHub Copilot API)",
+    "verifier": "eval/results/verifier/verify_claude-sonnet-55.jsonl",
+    "differences": [
+     "Pool: 17-passage paper-protocol pool (top textbook chunks), not live retrieval.",
+     "Kept passages are shown in full; decisive-sentence compression was not recorded.",
+     "Verifier (claude-sonnet-5.5) verdict was recorded in a separate pass; its latency is not part of the trace."
+    ]
+   }
+  },
+  {
+   "key": "supported",
+   "title": "Supported movement: evidence admitted with a verbatim quote",
+   "blurb": "The study abstract flips a wrong closed-book answer to the correct one. The filter keeps only the abstract, and the verifier returns a quote that occurs verbatim in it.",
+   "request": {
+    "question": "Does increased nerve length within the treatment volume improve trigeminal neuralgia radiosurgery?",
+    "options": {
+     "A": "yes",
+     "B": "no",
+     "C": "maybe"
+    },
+    "gate": "flip",
+    "answer_model": "gpt-4o-mini",
+    "probe_model": "gpt-4o-mini",
+    "k_textbook": 0,
+    "k_pubmed": 0,
+    "rewrite_query": false,
+    "user_passages": [],
+    "speculative_filter": false,
+    "overlap_retrieval": true,
+    "scout_model": null,
+    "verifier_model": "claude-sonnet-5.5",
+    "tau_m": 0.15,
+    "tau_g": 0.5,
+    "tau_sem": 0.5
+   },
+   "result": {
+    "type": "result",
+    "question": "Does increased nerve length within the treatment volume improve trigeminal neuralgia radiosurgery?",
+    "options": {
+     "A": "yes",
+     "B": "no",
+     "C": "maybe"
+    },
+    "question_type": "mcq",
+    "result": {
+     "gate": "flip",
+     "mode": "flip_filtered",
+     "answer": "B",
+     "answer_text": "B. no",
+     "admitted": true,
+     "kept_context": [
+      {
+       "id": "PMID:11567820",
+       "source": "pubmed",
+       "title": "Study abstract (PubMedQA context)",
+       "content": "To test the hypothesis that increasing the nerve length within the treatment volume for trigeminal neuralgia radiosurgery would improve pain relief. Eighty-seven patients with typical trigeminal neuralgia were randomized to undergo retrogasserian gamma knife radiosurgery (75 Gy maximal dose with 4-mm diameter collimators) using either one (n = 44) or two (n = 43) isocenters. The median follow-up was 26 months (range 1-36). Pain relief was complete in 57 patients (45 without medication and 12 with low-dose medication), partial in 15, and minimal in another 15 patients. The actuarial rate of obtaining complete pain relief (with or without medication) was 67.7% +/- 5.1%. The pain relief was identical for one- and two-isocenter radiosurgery. Pain relapsed in 30 of 72 responding patients. Facial numbness and mild and severe paresthesias developed in 8, 5, and 1 two-isocenter patients vs. 3, 4, and 0 one-isocenter patients, respectively (p = 0.23). Improved pain relief correlated with younger age (p = 0.025) and fewer prior procedures (p = 0.039) and complications (numbness or paresthesias) correlated with the nerve length irradiated (p = 0.018).",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/11567820/",
+       "pool_index": 4
+      }
+     ],
+     "closed_book_answer": "A",
+     "context_answer": "B",
+     "movement": 1.0,
+     "groundedness": null,
+     "retained_tokens": 289,
+     "pool_tokens": 3226,
+     "note": "Evidence moved the answer; re-answered on the passages that carry it. Verified: \"The pain relief was identical for one- and two-isocenter radiosurgery.\"",
+     "verification": {
+      "supported": true,
+      "doc": 1,
+      "quote": "The pain relief was identical for one- and two-isocenter radiosurgery.",
+      "model": "claude-sonnet-5.5"
+     }
+    },
+    "pool": [
+     {
+      "id": "Neurology_Adams_1481",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Vascular Loop as a Cause of Trigeminal Neuralgia It has become apparent that a proportion of ostensibly idiopathic cases are caused by compression of the trigeminal roots by a small tortuous branch of the basilar artery. This was originally pointed out by Dandy and brought to greater attention by Jannetta, who has observed it frequently and has devised a procedure that is now widely used to relieve the pain by decompression of the trigeminal root. The offending small vessel is removed from contact with the proximal portion of the nerve (see below). The tortuous vessel can often be visualized by special MRI sequences or by MR angiography but these vessels can be found asymptomatic patients as well. This and other disorders of the fifth nerve, some of which give rise to facial pain, are discussed in Chap. 44.",
+      "url": null,
+      "pool_index": 0
+     },
+     {
+      "id": "Surgery_Schwartz_12785",
+      "source": "textbook",
+      "title": "Surgery Schwartz",
+      "content": "the patient who develops a painful neuroma, nonsurgi-cal treatments are initiated first. The neuroma can be identified by the presence of a Tinel\u2019s sign. Therapy techniques of desen-sitization, ultrasound, and electrical stimulation have all proven useful. Corticosteroid injection to the neuroma has also proven useful in some hands.When these techniques fail, surgery is contemplated. The neuroma can be resected, but a new one will form to replace it. The nerve ending can be buried in muscle or even bone to pre-vent the neuroma from residing in a superficial location where it may be impacted frequently.Regional Pain SyndromesInjuries to the upper extremity can occasionally result in the patient experiencing pain beyond the area of initial injury. Reflex sympathetic dystrophy and sympathetic mediated pain are two terms that have been used in the past to describe this phenomenon. Both are inaccurate, as the sympathetic nervous system is not always involved. Current terminology for this",
+      "url": null,
+      "pool_index": 1
+     },
+     {
+      "id": "Surgery_Schwartz_12386",
+      "source": "textbook",
+      "title": "Surgery Schwartz",
+      "content": "A current leading etiologic hypothesis for trigeminal neuralgia is irritation and pulsatile compression of the root entry zone of the nerve by an artery in the posterior fossa, usually a loop of the superior cerebellar artery. The pain is excruciating and can be debilitating. Medical therapy, including carbamazepine and amitriptyline, may reduce the frequency of events. Options for medically refractory cases include percuta-neous injection of glycerol into the path of the nerve, periph-eral transection of the nerve branches, SRS, and microvascular decompression (MVD).MVD involves performing a small posterior fossa crani-otomy on the side of the symptoms, retraction of the cerebellar hemisphere, and exploration of cranial nerve V. If an artery is found near the nerve, the vessel is freed of any adhesions and nonabsorbable material is placed between the nerve root and the artery. MVD remains the first definitive management option because SRS is associated with a substantial incidence of",
+      "url": null,
+      "pool_index": 2
+     },
+     {
+      "id": "Surgery_Schwartz_12385",
+      "source": "textbook",
+      "title": "Surgery Schwartz",
+      "content": "neurologic and psychiatric disorders, including but not limited to Tourette syndrome, Huntington\u2019s disease, and Alzheimer dis-ease. Preclinical studies of both substance abuse and obesity have also shown promise.95,96 The opportunity to model reward-seeking behaviors associated with these disorders in animals provides the ability to not only test safety but also study mecha-nisms and inform the design of future clinical trials.Trigeminal NeuralgiaTrigeminal neuralgia, also known as tic douloureux, is charac-terized by repetitive, unilateral, sharp, and lancinating pains in the distribution of, typically, the second, but sometimes third, branch of cranial nerve V, the trigeminal nerve. The patient may describe a \u201ctrigger point,\u201d an area on the face that elicits the pain when touched. A current leading etiologic hypothesis for trigeminal neuralgia is irritation and pulsatile compression of the root entry zone of the nerve by an artery in the posterior fossa, usually a loop of the",
+      "url": null,
+      "pool_index": 3
+     },
+     {
+      "id": "PMID:11567820",
+      "source": "pubmed",
+      "title": "Study abstract (PubMedQA context)",
+      "content": "To test the hypothesis that increasing the nerve length within the treatment volume for trigeminal neuralgia radiosurgery would improve pain relief. Eighty-seven patients with typical trigeminal neuralgia were randomized to undergo retrogasserian gamma knife radiosurgery (75 Gy maximal dose with 4-mm diameter collimators) using either one (n = 44) or two (n = 43) isocenters. The median follow-up was 26 months (range 1-36). Pain relief was complete in 57 patients (45 without medication and 12 with low-dose medication), partial in 15, and minimal in another 15 patients. The actuarial rate of obtaining complete pain relief (with or without medication) was 67.7% +/- 5.1%. The pain relief was identical for one- and two-isocenter radiosurgery. Pain relapsed in 30 of 72 responding patients. Facial numbness and mild and severe paresthesias developed in 8, 5, and 1 two-isocenter patients vs. 3, 4, and 0 one-isocenter patients, respectively (p = 0.23). Improved pain relief correlated with younger age (p = 0.025) and fewer prior procedures (p = 0.039) and complications (numbness or paresthesias) correlated with the nerve length irradiated (p = 0.018).",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11567820/",
+      "pool_index": 4
+     },
+     {
+      "id": "InternalMed_Harrison_30718",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "the face, brushing the teeth, or exposure to a draft of air\u2014generate excruciating pain. An essential feature of trigeminal neuralgia is that objective signs of sensory loss cannot be demonstrated on examination.",
+      "url": null,
+      "pool_index": 5
+     },
+     {
+      "id": "InternalMed_Harrison_30728",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Another procedure, radiofrequency thermal rhizotomy, creates a heat lesion of the trigeminal ganglion or nerve. It is used less often now than in the past. Short-term relief is experienced by >95% of patients; however, long-term studies indicate that pain recurs in up to one-third of treated patients. Postoperatively, partial numbness of the face is common, masseter (jaw) weakness may occur especially following bilateral procedures, and corneal denervation with secondary keratitis can follow rhizotomy for first-division trigeminal neuralgia.",
+      "url": null,
+      "pool_index": 6
+     },
+     {
+      "id": "InternalMed_Harrison_31211",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "not necessary. Symptoms often resolve spontaneously over weeks or months, but the patient may be left with permanent numbness. Treatment consists of weight loss and avoiding tight belts. Analgesics in the form of a lidocaine patch, nonsteroidal agents, and occasionally medications for neuropathic pain can be used (Table 459-6). Rarely, locally injecting the nerve with an anesthetic can be tried. There is no role for surgery.",
+      "url": null,
+      "pool_index": 7
+     },
+     {
+      "id": "InternalMed_Harrison_30727",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Gamma knife radiosurgery of the trigeminal nerve root is also used for treatment and results in complete pain relief, sometimes delayed in onset, in more than two-thirds of patients and a low risk of persistent facial numbness; the response is sometimes long-lasting, but recurrent pain develops over 2\u20133 years in half of patients. Compared with surgical decompression, gamma knife surgery appears to be somewhat less effective but has few serious complications.",
+      "url": null,
+      "pool_index": 8
+     },
+     {
+      "id": "Neurology_Adams_5266",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "An alternative to surgery is focused radiation, which controls the growth of many of the smaller tumors. In a large series of patients treated with radiosurgery, facial motor and sensory functions were preserved in 75 percent of cases and, after 28 months of observation, no new neurologic deficits were detected (Kondziolka et al). This approach is favored in older patients with few symptoms but is being adopted increasingly for others. The rates of hearing loss and facial numbness and weakness are comparable or lower than with surgery, but the follow-up period in most series is less than 5 years (Flickinger et al). Focused radiation with the Gamma Knife or proton beam also appears to be preferable to surgery in cases of recurrent tumor. The antiangiogenic agent, bevacizumab, in preliminary reports has reduced the size of these tumors in patients with NF2 (Plotkin et al).",
+      "url": null,
+      "pool_index": 9
+     },
+     {
+      "id": "InternalMed_Harrison_30719",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Trigeminal neuralgia is relatively common, with an estimated annual incidence of 4\u20138 per 100,000 individuals. Middle-aged and elderly persons are affected primarily, and ~60% of cases occur in women. Onset is typically sudden, and bouts tend to persist for weeks or months before remitting spontaneously. Remissions may be long-lasting, but in most patients, the disorder ultimately recurs.",
+      "url": null,
+      "pool_index": 10
+     },
+     {
+      "id": "Surgery_Schwartz_12103",
+      "source": "textbook",
+      "title": "Surgery Schwartz",
+      "content": "is used for surgical stabilization of many types of spinal instability, including traumatic, infec-tious, oncologic, and degenerative.7 Infection of the nervous system is a serious and prevalent medical problem. Operative management is indicated for most conditions in which there is symptomatic compression of neural structures.8 Functional neurosurgery via device implantation is a rapidly evolving discipline that has already become the standard of care in treating medically refractory Parkinson\u2019s disease and essential tremor. A wider variety of deep brain stimulation targets will treat additional neuropsychiatric diseases.9 Stereotactic radiosurgery is a powerful treatment option for intracranial disease, whether it is primary or adjunct. Gamma knife surgery can be used to treat tumors, vascular malfor-mations, and cranial neuralgias.Brunicardi_Ch42_p1827-p1878.indd 182801/03/19 7:16 PM 1829NEUROSURGERYCHAPTER 42neuron in the anterior horn at the appropriate level. The lower motor",
+      "url": null,
+      "pool_index": 11
+     },
+     {
+      "id": "Neurology_Adams_6688",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Several modes of radiosurgery are used to decrease the size of the lesion, albeit with a substantial delay. This approach is utilized most often with AVMs of 3 cm or smaller located in an area of the brain in which resection would be likely to produce a serious neurologic disability. Kjellberg and Chapman pioneered the treatment of AVMs using a single dose of subnecrotizing stereotactically directed proton radiation. The technique of stereotactic radiosurgery has been adopted using photon radiation sources, such as a linear accelerator, gamma radiation (Karlsson et al) and other modes of focused x-ray radiation as accepted alternatives to operative treatment of small lesions or those situated in deep regions, including the brainstem, the thalamus, or in \u201celoquent\u201d areas of the cortex. The main drawback to radiosurgery is that obliteration of AVMs occurs in a delayed manner, usually with a latency of at least 18 to 24 months after treatment, during which the patient is unprotected from",
+      "url": null,
+      "pool_index": 12
+     },
+     {
+      "id": "Neurology_Adams_11011",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "Because of their wide anatomic distribution, complete interruption of both the motor and sensory fibers of the trigeminal nerve is rarely observed. In contrast, partial dysfunction of the trigeminal nerve, particularly of the sensory part, is common, the main symptoms being facial numbness and pain. The various cranial nerve and brainstem syndromes in which the fifth nerve is involved are listed in Tables 30-5, 33-5, and 44-1 the last in relation to stroke syndromes of the brainstem that affect the nerve in its fascicular course or in its nucleus. Diseases Affecting the Fifth Nerve A variety of diseases may affect the peripheral branches of the trigeminal nerves, the gasserian ganglion, and the roots (sensory and motor). Hughes has summarized them and the main ones are described below. The role of the nerve in migraine is discussed in Chap. 9.",
+      "url": null,
+      "pool_index": 13
+     },
+     {
+      "id": "InternalMed_Harrison_30730",
+      "source": "textbook",
+      "title": "InternalMed Harrison",
+      "content": "Isolated sensory loss over the chin (mental neuropathy) can be the only manifestation of systemic malignancy. Rarely, an idiopathic form of trigeminal neuropathy is observed. It is characterized by numbness Nasopharyngeal carcinoma Trauma Guillain-Barr\u00e9 syndrome Sj\u00f6gren\u2019s syndrome Collagen-vascular diseases Sarcoidosis Leprosy Drugs (stilbamidine, trichloroethylene) Idiopathic trigeminal neuropathy and paresthesias, sometimes bilaterally, with loss of sensation in the territory of the trigeminal nerve but without weakness of the jaw. Gradual recovery is the rule. Tonic spasm of the masticatory muscles, known as trismus, is symptomatic of tetanus (Chap. 177) or may occur in patients treated with phenothiazines. (Fig. 455-2) The seventh cranial nerve supplies all the muscles concerned with facial expression. The sensory component is small (the nervus intermedius); it conveys taste sensation from the anterior Trigeminal Neuralgia, Bell\u2019s Palsy, and Other Cranial Nerve Disorders",
+      "url": null,
+      "pool_index": 14
+     },
+     {
+      "id": "Neurology_Adams_11016",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "In rare instances, trigeminal neuralgia is preceded or accompanied by hemifacial spasm, a combination that Cushing called tic convulsif. This combination may be indicative of a tumor (cholesteatoma), an aneurysmal dilatation of the basilar artery or one of its branches, or an arteriovenous malformation that compresses both the trigeminal and facial nerves. Trigeminal neuralgia and glossopharyngeal neuralgia (pain in the tonsillar region) may also be combined in these conditions. Trigeminal neuropathies and neuritis Of the conditions that damage the branches of the trigeminal nerve, facial and cranial injuries, and fractures are probably the most common, but they do not usually come to the attention of neurologists. The most superficial branches of the nerve\u2014the supratrochlear, supraorbital, and infraorbital\u2014are the ones usually involved by trauma. The sensory loss is present from the time of the injury, and partial regeneration may be attended by constant pain.",
+      "url": null,
+      "pool_index": 15
+     },
+     {
+      "id": "Neurology_Adams_6685",
+      "source": "textbook",
+      "title": "Neurology Adams",
+      "content": "must be taken into account when advising patients. In a meta-analysis of 13,698 patients, approximately 7 percent with surgical resection and 5 percent after stereotactic radiosurgery were left with neurological deficits (van Beijnum et al).",
+      "url": null,
+      "pool_index": 16
+     }
+    ],
+    "summary": {
+     "wall_ms": 1943.1,
+     "llm_calls": 4,
+     "llm_calls_used": 4,
+     "prompt_tokens": 5711,
+     "completion_tokens": 52,
+     "wasted_prompt_tokens": 0,
+     "sequential_ms": 2449.8
+    },
+    "spans": [
+     {
+      "name": "probe(closed-book)",
+      "kind": "llm",
+      "start_ms": 0.1,
+      "end_ms": 507.9,
+      "duration_ms": 507.8,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 64,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "probe(full pool)",
+      "kind": "llm",
+      "start_ms": 0.8,
+      "end_ms": 509.6,
+      "duration_ms": 508.8,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 2926,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "decide(movement)",
+      "kind": "decision",
+      "start_ms": 509.7,
+      "end_ms": 509.7,
+      "duration_ms": 0.0,
+      "model": null,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "moved": true,
+       "movement": 1.0
+      }
+     },
+     {
+      "name": "filter(marginal-utility)",
+      "kind": "llm",
+      "start_ms": 509.7,
+      "end_ms": 1445.9,
+      "duration_ms": 936.2,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 2354,
+      "completion_tokens": 49,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "kept": [
+        5
+       ]
+      }
+     },
+     {
+      "name": "answer(filtered context)",
+      "kind": "llm",
+      "start_ms": 1446.1,
+      "end_ms": 1943.1,
+      "duration_ms": 497.0,
+      "model": "gpt-4o-mini",
+      "prompt_tokens": 367,
+      "completion_tokens": 1,
+      "speculative": false,
+      "used": true,
+      "detail": {}
+     },
+     {
+      "name": "verify(support)",
+      "kind": "llm",
+      "start_ms": 1943.1,
+      "end_ms": 1943.1,
+      "duration_ms": 0,
+      "model": "claude-sonnet-5.5",
+      "prompt_tokens": 686,
+      "completion_tokens": 47,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "timing": "not recorded: verdict comes from a separate offline verifier pass over this trace"
+      }
+     },
+     {
+      "name": "decide(verified support)",
+      "kind": "decision",
+      "start_ms": 1943.1,
+      "end_ms": 1943.1,
+      "duration_ms": 0,
+      "model": null,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "speculative": false,
+      "used": true,
+      "detail": {
+       "supported": true,
+       "quote": "The pain relief was identical for one- and two-isocenter radiosurgery."
+      }
+     }
+    ]
+   },
+   "provenance": {
+    "run": "eval/results/scale_pubmedqa_gpt4omini_d16_s1.jsonl",
+    "qid": "pubmedqa:11567820",
+    "gold": "B",
+    "recorded": "2026-11-13 (gpt-4o-mini via GitHub Copilot API)",
+    "verifier": "eval/results/verifier/verify_claude-sonnet-55.jsonl",
+    "differences": [
+     "Pool: 17-passage paper-protocol pool (top textbook chunks plus the gold abstract), not live retrieval.",
+     "Kept passages are shown in full; decisive-sentence compression was not recorded.",
+     "Verifier (claude-sonnet-5.5) verdict was recorded in a separate pass; its latency is not part of the trace."
+    ]
+   }
+  }
+ ]
+}

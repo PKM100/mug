@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+numpy
+fastembed
+pydantic
+matplotlib
+pytest
+pytest-asyncio

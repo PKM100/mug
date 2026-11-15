@@ -1,0 +1,30 @@
+\begin{tabular}{lcccrrr}
+\toprule
+Policy & Acc. & 95\% CI & vs.\ 4.1 naive & 4.1 in tok & \$/1k q & Cost \\
+\midrule
+\multicolumn{7}{l}{\textit{MedQA}, $n{=}150$, pool $\approx$3592 tok} \\
+gpt-4.1 closed-book & 0.880 & [0.82,0.92] & 6/2, 0.29 & 223 & \$0.45 & 0.07 \\
+gpt-4.1 naive & 0.853 & [0.79,0.90] & -- & 3456 & \$6.92 & 1.00 \\
+Cascade flip (4o-mini scout) & 0.893 & [0.83,0.93] & 8/2, 0.11 & 332 & \$1.30 & 0.19 \\
+Cascade grounded (4o-mini scout) & 0.873 & [0.81,0.92] & 7/4, 0.55 & 537 & \$1.74 & 0.25 \\
+gpt-4o-mini naive & 0.700 & [0.62,0.77] & 4/27, 3e-05 & 0 & \$0.52 & 0.07 \\
+gpt-4o-mini flip & 0.727 & [0.65,0.79] & 8/27, 2e-03 & 0 & \$0.64 & 0.09 \\
+\midrule
+\multicolumn{7}{l}{\textit{PubMedQA}, $n{=}150$, pool $\approx$3526 tok} \\
+gpt-4.1 closed-book & 0.593 & [0.51,0.67] & 8/32, 2e-04 & 65 & \$0.14 & 0.02 \\
+gpt-4.1 naive & 0.753 & [0.68,0.82] & -- & 3167 & \$6.34 & 1.00 \\
+Cascade flip (4o-mini scout) & 0.740 & [0.66,0.80] & 11/13, 0.84 & 183 & \$0.98 & 0.15 \\
+Cascade grounded (4o-mini scout) & 0.727 & [0.65,0.79] & 8/12, 0.50 & 991 & \$2.64 & 0.42 \\
+gpt-4o-mini naive & 0.753 & [0.68,0.82] & 14/14, 1.00 & 0 & \$0.48 & 0.08 \\
+gpt-4o-mini flip & 0.793 & [0.72,0.85] & 14/8, 0.29 & 0 & \$0.62 & 0.10 \\
+\midrule
+\multicolumn{7}{l}{\textit{Mixed (both pooled)}, $n{=}300$} \\
+gpt-4.1 closed-book & 0.737 & [0.68,0.78] & 14/34, 6e-03 & -- & \$0.30 & 0.04 \\
+gpt-4.1 naive & 0.803 & [0.75,0.84] & -- & -- & \$6.63 & 1.00 \\
+Cascade flip (4o-mini scout) & 0.817 & [0.77,0.86] & 19/15, 0.61 & -- & \$1.14 & 0.17 \\
+Cascade grounded (4o-mini scout) & 0.800 & [0.75,0.84] & 15/16, 1.00 & -- & \$2.19 & 0.33 \\
+gpt-4o-mini naive & 0.727 & [0.67,0.77] & 18/41, 4e-03 & -- & \$0.50 & 0.08 \\
+gpt-4o-mini flip & 0.760 & [0.71,0.80] & 22/35, 0.11 & -- & \$0.63 & 0.10 \\
+Format router (oracle per dataset) & 0.817 & [0.77,0.86] & 20/16, 0.62 & -- & \$0.46 & 0.07 \\
+\bottomrule
+\end{tabular}
