@@ -4,6 +4,7 @@ import {
   askStream,
   fetchConfig,
   fetchHealth,
+  STATIC,
   type AppConfig,
   type AskRequest,
   type Candidate,
@@ -77,7 +78,10 @@ export default function App() {
   const [config, setConfig] = useState<AppConfig | null>(null)
   const [route, setRoute] = useState(window.location.hash)
   useEffect(() => {
-    const on = () => setRoute(window.location.hash)
+    const on = () => {
+      if (STATIC && !window.location.hash.startsWith('#/replay')) return window.location.replace('#/replay')
+      setRoute(window.location.hash)
+    }
     window.addEventListener('hashchange', on)
     return () => window.removeEventListener('hashchange', on)
   }, [])
@@ -96,6 +100,7 @@ export default function App() {
   const compareAbortRef = useRef<AbortController | null>(null)
 
   useEffect(() => {
+    if (STATIC) return
     fetchConfig()
       .then((cfg) => {
         setConfig(cfg)
@@ -106,6 +111,7 @@ export default function App() {
 
   const ready = health?.textbooks_ready ?? false
   useEffect(() => {
+    if (STATIC) return
     let alive = true
     const tick = () =>
       fetchHealth()

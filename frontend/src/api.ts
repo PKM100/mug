@@ -300,6 +300,9 @@ export interface ReplayBundle {
 export interface ReplayAudit extends AuditList {
   records: Record<string, AuditRecord>
 }
+/** Static build (GitHub Pages): replay only, no backend. */
+export const STATIC = import.meta.env.VITE_STATIC === '1'
+
 const REPLAY_BASE = `${import.meta.env.BASE_URL}replay/`
 export const fetchReplayCases = (): Promise<ReplayBundle> => getJSON<ReplayBundle>(`${REPLAY_BASE}cases.json`)
 export const fetchReplayAudit = (): Promise<ReplayAudit> => getJSON<ReplayAudit>(`${REPLAY_BASE}audit.json`)

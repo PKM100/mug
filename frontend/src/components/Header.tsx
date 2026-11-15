@@ -1,4 +1,4 @@
-import type { Health } from '../api'
+import { STATIC, type Health } from '../api'
 
 export type PubmedStatus = 'unknown' | 'ok' | 'error'
 
@@ -48,6 +48,14 @@ export function Header({ health, healthError, pubmed, pubmedNote, route = '' }: 
             </p>
           </div>
         </div>
+        {STATIC ? (
+        <nav className="nav">
+          <a href="#/replay" className={route.startsWith('#/replay/audit') ? '' : 'on'}>Replay</a>
+          <a href="#/replay/audit" className={route.startsWith('#/replay/audit') ? 'on' : ''}>Audit log</a>
+          <a href="../">About</a>
+          <a href="https://github.com/PKM100/mug">GitHub</a>
+        </nav>
+        ) : (
         <nav className="nav">
           <a href="#/" className={isAudit(route) || isReplay(route) ? '' : 'on'}>Ask</a>
           <a href="#/audit" className={isAudit(route) ? 'on' : ''}>Audit</a>
@@ -55,6 +63,7 @@ export function Header({ health, healthError, pubmed, pubmedNote, route = '' }: 
             Replay
           </a>
         </nav>
+        )}
         {isReplay(route) ? (
           <div className="health">
             <span className="pill replay" title="Recorded traces rendered offline; no backend or model calls">

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MUG-Serve: retrieval-gated medical QA</title>
+<meta name="description" content="Use retrieved evidence only when it changes the answer. A medical QA app and audit proxy for RAG systems.">
+<link rel="icon" href="demo/favicon.svg">
+<style>
+:root{--ink:#14213d;--muted:#5b6475;--line:#e3e7ee;--bg:#f6f8fb;--blue:#1d4e89;--warn:#fff4dc}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:var(--ink);background:#fff}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+header{padding:56px 0 64px;text-align:center}
+h1{font-size:2.6rem;line-height:1.15;margin:0 0 14px}h1 span{color:var(--blue)}
+.lead{font-size:1.2rem;color:var(--muted);max-width:720px;margin:0 auto 28px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--blue);color:var(--blue)}
+.btn.primary{background:var(--blue);color:#fff}
+.note{background:var(--warn);text-align:center;padding:10px;font-size:.95rem}
+.shot{margin:40px auto 0;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 40px rgba(20,33,61,.12);width:100%;display:block}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:1.6rem;margin:0 0 20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--bg);border-radius:12px;padding:20px}.card b{display:block;margin-bottom:6px}
+.n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;margin-bottom:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+ul{padding-left:20px;margin:0}li{margin:6px 0}
+pre{background:#0f172a;color:#e2e8f0;padding:18px;border-radius:10px;overflow:auto;font-size:.9rem;line-height:1.5}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+footer{padding:32px 0;color:var(--muted);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
+a{color:var(--blue)}
+@media(max-width:720px){.steps,.grid2{grid-template-columns:1fr}h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="note"><b>Research prototype.</b> Not medical advice. Do not use for clinical decisions.</div>
+<header class="wrap">
+  <h1>Use evidence only when it <span>changes the answer</span></h1>
+  <p class="lead">Retrieved passages can pull a language model away from a correct answer. <b>MUG</b> (marginal-utility gating) asks the model first, then keeps the evidence only if it moves the answer, and optionally only if a verifier finds a quote that supports the new one.</p>
+  <div class="btns">
+    <a class="btn primary" href="demo/#/replay">Try the demo</a>
+    <a class="btn" href="https://github.com/PKM100/mug">View on GitHub</a>
+    <a class="btn" href="https://github.com/PKM100/mug/blob/main/docs/audit.md">Audit your RAG</a>
+  </div>
+  <img class="shot" src="ui.png" alt="MUG-Serve answering a medical question, with the gate decision, answer movement and cost breakdown">
+</header>
+
+<section class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="card"><span class="n">1</span><b>Answer closed-book</b>The model answers with no evidence.</div>
+    <div class="card"><span class="n">2</span><b>Answer with evidence</b>The same model answers again with retrieved textbook and PubMed passages.</div>
+    <div class="card"><span class="n">3</span><b>Gate</b>If the answer did not move, the evidence is dropped. If it moved, the evidence is kept, or first checked for a supporting quote.</div>
+  </div>
+  <p>Every step is traced: what was retrieved, whether it moved the answer, what was kept, and what each call cost.</p>
+</section>
+
+<section class="wrap">
+  <h2>What you can do with it</h2>
+  <div class="grid2">
+    <div><ul>
+      <li><b>Audit an existing RAG system.</b> Put the proxy in front of its model calls in shadow mode. Answers are unchanged; each request is labelled <i>no effect</i>, <i>moved + supported</i>, or <i>moved, no quote found</i>.</li>
+      <li><b>Compare retrieval policies offline</b> on a frozen set of documents: accuracy, tokens and latency.</li>
+      <li><b>Trim noisy retrieval.</b> In our setup the gate matched naive RAG's accuracy with 5–9% of its evidence tokens.</li>
+    </ul></div>
+    <div><ul>
+      <li><b>Inspect one answer</b> step by step in the UI.</li>
+      <li><b>Save cost with a strong model:</b> a cheap scout decides whether evidence matters before the expensive model reads it.</li>
+      <li><b>Bring your own model:</b> OpenAI, Anthropic, or GitHub Copilot.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Limits</h2>
+  <ul>
+    <li><b>Not a correctness check.</b> "No effect" does not endorse the answer, and "supported" is an LLM judgement.</li>
+    <li><b>Misleading evidence</b> that argues plausibly for a wrong answer can fool both the gate and the verifier.</li>
+    <li><b>Background passages</b> (textbook-style) often contain no quotable support.</li>
+    <li><b>Model-dependent:</b> with <code>claude-haiku-4.5</code> the gate scored below the no-evidence answer on MedQA.</li>
+    <li><b>Slower</b> than naive RAG, since it makes extra model calls.</li>
+  </ul>
+</section>
+
+<section class="wrap">
+  <h2>Run it yourself</h2>
+<pre><code>git clone https://github.com/PKM100/mug && cd mug
+docker build -t mug .
+docker run --rm -v mug-data:/data mug python ../scripts/download_index.py --data-dir /data  # optional, ~20 min
+docker run --rm -p 127.0.0.1:8000:8000 -v mug-data:/data -e OPENAI_API_KEY mug            # http://127.0.0.1:8000</code></pre>
+  <p>Use <code>-e ANTHROPIC_API_KEY</code> for Claude or <code>-e GITHUB_TOKEN</code> for GitHub Copilot. See the <a href="https://github.com/PKM100/mug/blob/main/docs/setup.md">setup guide</a>.</p>
+</section>
+
+<footer>MIT licensed · © 2026 Prashanth Kumar Murali · The MedRAG textbooks, PubMed and the benchmarks keep their own terms.</footer>
+</body>
+</html>
